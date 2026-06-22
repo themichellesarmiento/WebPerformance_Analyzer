@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "server/analyzer.mjs"  ],
+, "server/analyzer.mjs", "server/lighthouse/runLighthouse.js", "server/lighthouse/extractScores.js", "server/lighthouse/extractRecommendations.js", "server/lighthouse/extractMetrics.js", "server/lighthouse/index.js"  ],
   "exclude": ["node_modules"]
 }

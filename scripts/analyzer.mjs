@@ -1,35 +1,17 @@
-import lighthouse from "lighthouse";
-import * as chromeLauncher from "chrome-launcher";
+import { analyzeUrl } from "../server/lighthouse/index.js";
 
 const url = process.argv[2];
 
-const chrome = await chromeLauncher.launch({
-  chromeFlags: ["--headless"],
-});
+if (!url) {
+  console.error("URL missing");
+  process.exit(1);
+}
 
-const result = await lighthouse(url, {
-  logLevel: "silent",
-  output: "json",
-  onlyCategories: [
-    "performance",
-    "accessibility",
-    "seo",
-    "best-practices",
-  ],
-  port: chrome.port,
-});
+try {
+  const result = await analyzeUrl(url);
 
-const categories = result.lhr.categories;
-
-console.log(
-  JSON.stringify({
-    performance: Math.round(categories.performance.score * 100),
-    accessibility: Math.round(categories.accessibility.score * 100),
-    seo: Math.round(categories.seo.score * 100),
-    bestPractices: Math.round(
-      categories["best-practices"].score * 100
-    ),
-  })
-);
-
-chrome.kill();
+  console.log(JSON.stringify(result));
+} catch (err) {
+  console.error(JSON.stringify({ error: err.message }));
+  process.exit(1);
+}
