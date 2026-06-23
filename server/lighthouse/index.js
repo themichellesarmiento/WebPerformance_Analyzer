@@ -4,7 +4,8 @@ import { runLighthouse } from "./runLighthouse.js";
 import extractScores from "./extractScores.js";
 import extractMetrics from "./extractMetrics.js";
 import extractCategoryRecommendations from "./extractRecommendations.js";
-import { filterBinaryFailures, filterPerformance } from './filterHelpers.js'
+import filterBinaryFailures from './filterBinaryFailures.js'
+import filterPerformance from './filterPerformance.js'
 
 export async function analyzeUrl(url) {
   const result = await runLighthouse(url);
