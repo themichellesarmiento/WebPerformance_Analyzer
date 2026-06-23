@@ -56,3 +56,7 @@ export type AnalysisReport = {
   metrics: Metrics;
   recommendations: Recommendations;
 };
+
+export type ScoreCardProps = CategoryScore & {
+  title: string
+}
