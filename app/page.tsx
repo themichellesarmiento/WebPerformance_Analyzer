@@ -1,6 +1,7 @@
 'use client'
 
-import ScoreCard from '@/components/ScoreCard';
+import MetricsCard from '@/components/MetricsCard';
+import ScoreCardSection from '@/components/ScoreCard/ScoreCardSection';
 import { AnalysisReport } from '@/types/report';
 import { useState } from 'react';
 
@@ -44,14 +45,11 @@ const Home = () => {
         </button>
       </div>
       {report && (
-        <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mt-10'>
-          <ScoreCard title='Performance' score={report.scores.performance.score} rating={report.scores.performance.rating} />
-          <ScoreCard title='Accesibility' score={report.scores.accessibility.score} rating={report.scores.accessibility.rating} />
-          <ScoreCard title='SEO' score={report.scores.seo.score} rating={report.scores.seo.rating} />
-          <ScoreCard title='Best Practices' score={report.scores.bestPractices.score} rating={report.scores.bestPractices.rating} />
-        </div>
-      )
-      }
+        <>
+          <ScoreCardSection report={report} />
+          <MetricsCard metrics={report.metrics} />
+        </>
+      )}
     </main>
   )
 }

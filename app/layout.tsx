@@ -22,8 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${hankenGrotesk.variable} h-full antialiased font-sans`}
-    >
+      className={`${hankenGrotesk.variable} h-full antialiased font-sans`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
