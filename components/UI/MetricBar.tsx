@@ -17,7 +17,7 @@ const MetricBar = ({ rating, numericValue, poor }: MetricBarProps) => {
     rating === 'good' ? 'bg-accent-three' : rating === 'poor' ? 'bg-accent-two' : 'bg-accent-one';
 
   return (
-    <div className='mt-3 h-1 w-full rounded-full bg-zinc-100/50'>
+    <div className='mt-3 h-1 w-full rounded-full bg-zinc-300'>
       <div className={`h-full rounded-full transition-all duration-500 ${color}`} style={{ width: `${width}%` }} />
     </div>
   );

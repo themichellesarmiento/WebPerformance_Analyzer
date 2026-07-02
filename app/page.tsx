@@ -1,6 +1,7 @@
 'use client'
 
 import MetricsCard from '@/components/MetricsCard';
+import RecommendationsSection from '@/components/Recommendations/RecommendationsSection';
 import ScoreCardSection from '@/components/ScoreCard/ScoreCardSection';
 import { AnalysisReport } from '@/types/report';
 import { useState } from 'react';
@@ -48,6 +49,7 @@ const Home = () => {
         <>
           <ScoreCardSection report={report} />
           <MetricsCard metrics={report.metrics} />
+          <RecommendationsSection recommendations={report.recommendations} />
         </>
       )}
     </main>

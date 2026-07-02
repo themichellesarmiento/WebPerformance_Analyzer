@@ -30,7 +30,7 @@ const badgeLabel = {
 const MetricsCard = ({ metrics }: { metrics: Metrics }) => {
   return (
     <section aria-label='Core web vitals'>
-      <h2 className='my-3 text-xs md:text-lg font-medium uppercase tracking-widest text-primary'>Core web vitals</h2>
+      <h2 className='my-3 text-xs md:text-lg font-medium uppercase tracking-widest text-text-primary'>Core web vitals</h2>
 
       <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5'>
         {metrics_config.map(({ key, label, good, poor }) => {
@@ -38,19 +38,19 @@ const MetricsCard = ({ metrics }: { metrics: Metrics }) => {
           const rating = metric.rating;
 
           return (
-            <div key={key} className='flex flex-col rounded-xl border border-primary bg-background p-4'>
+            <div key={key} className='flex flex-col rounded-xl border border-text-primary bg-background p-4'>
               <div className='mb-3 flex items-center justify-between gap-2'>
-                <span className='text-xs font-semibold uppercase tracking-wider text-primary'>{key}</span>
+                <span className='text-xs font-semibold uppercase tracking-wider text-text-primary'>{key}</span>
                 {rating && (
                   <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${badgeColor[rating]}`}>
                     {badgeLabel[rating]}
                   </span>
                 )}
               </div>
-              <p className={`text-2xl font-medium leading-none ${rating ? ratingColor[rating] : 'text-primary'}`}>
+              <p className={`text-2xl font-medium leading-none ${rating ? ratingColor[rating] : 'text-text-primary'}`}>
                 {metric.displayValue ?? '—'}
               </p>
-              <p className='mt-1.5 text-xs leading-snug text-primary'>{label}</p>
+              <p className='mt-1.5 text-xs leading-snug text-text-primary'>{label}</p>
               <div className='mt-auto'>
                 <MetricBar rating={rating} numericValue={metric.numericValue} good={good} poor={poor} />
               </div>
