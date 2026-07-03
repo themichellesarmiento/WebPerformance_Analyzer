@@ -1,5 +1,6 @@
 'use client'
 
+import ActionPlan from '@/components/ActionPlan';
 import MetricsCard from '@/components/MetricsCard';
 import RecommendationsSection from '@/components/Recommendations/RecommendationsSection';
 import ScoreCardSection from '@/components/ScoreCard/ScoreCardSection';
@@ -50,6 +51,7 @@ const Home = () => {
           <ScoreCardSection report={report} />
           <MetricsCard metrics={report.metrics} />
           <RecommendationsSection recommendations={report.recommendations} />
+          <ActionPlan url={report.url} score={report.scores.performance.score} recommendations={report.recommendations.performance} />
         </>
       )}
     </main>

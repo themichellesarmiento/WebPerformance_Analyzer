@@ -27,7 +27,7 @@ const RecommendationsSection = ({ recommendations }: Props) => {
 
       <div className="rounded-xl border border-text-primary bg-background">
 
-        <div className="flex flex-wrap gap-1 border-b border-zinc-100 p-4">
+        <div className="flex overflow-x-auto gap-1 border-b border-zinc-100 p-2 md:p-4 scrollbar-none">
           {tabs.map((tab) => {
             const count = recommendations[tab.key].length;
             const isActive = activeTab === tab.key;

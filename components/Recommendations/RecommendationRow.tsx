@@ -24,7 +24,7 @@ const RecommendationRow = ({ item }: { item: Recommendation }) => {
       </button>
 
       {expand && (
-          <p className="mt-2 pl-5 text-xl leading-relaxed text-text-primary overflow-hidden">{item.description}</p>
+          <p className="mt-2 pl-5 text-xl leading-relaxed text-text-primary mx-auto overflow-hidden">{item.description}</p>
       )}
     </div>
   )
